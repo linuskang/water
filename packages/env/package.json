@@ -1,0 +1,16 @@
+{
+  "name": "@workspace/env",
+  "private": true,
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "author": "linuskang",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "dependencies": {
+    "@t3-oss/env-core": "^0.13.11",
+    "dotenv": "^16.0.3",
+    "zod": "^4.6.5"
+  }
+}

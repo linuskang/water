@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: db
+      POSTGRES_PASSWORD: db
+      POSTGRES_DB: db
+    volumes:
+      - db:/var/lib/postgresql/data
+    ports:
+      - "5431:5432"
+    restart: unless-stopped
+    networks:
+      - db_net
+      
+volumes:
+  db:
+
+networks:
+  db_net:
+    driver: bridge

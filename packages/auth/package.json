@@ -1,0 +1,16 @@
+{
+  "name": "@workspace/auth",
+  "private": true,
+  "author": "linuskang",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "exports": {
+    ".": "./src/server.ts",
+    "./client": "./src/client.ts"
+  },
+  "dependencies": {
+    "@workspace/db": "*",
+    "@workspace/env": "*",
+    "better-auth": "^1.7.5"
+  }
+}
