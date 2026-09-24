@@ -23,17 +23,9 @@ COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN DATABASE_URL=postgresql://placeholder:placeholder@localhost:5432/placeholder \
-  BETTER_AUTH_SECRET=ci-build-placeholder-secret-32-characters-long \
-  BETTER_AUTH_URL=http://localhost:3000 \
-  GOOGLE_CLIENT_ID=ci-placeholder \
-  GOOGLE_CLIENT_SECRET=ci-placeholder \
+RUN SKIP_ENV_VALIDATION=true \
   npm exec --workspace=@workspace/db prisma generate
-RUN DATABASE_URL=postgresql://placeholder:placeholder@localhost:5432/placeholder \
-  BETTER_AUTH_SECRET=ci-build-placeholder-secret-32-characters-long \
-  BETTER_AUTH_URL=http://localhost:3000 \
-  GOOGLE_CLIENT_ID=ci-placeholder \
-  GOOGLE_CLIENT_SECRET=ci-placeholder \
+RUN SKIP_ENV_VALIDATION=true \
   npm run build --workspace=web
 
 FROM node:24-alpine AS runner
